@@ -20,9 +20,7 @@ class _DataInputScreenState extends State<DataInputScreen> {
   void initState() {
     _controller = CameraController(widget.cameras[0], ResolutionPreset.max);
     _controller.initialize().then((_) {
-      if (!context.mounted) {
-        return;
-      }
+      if (!context.mounted) return;
       setState(() {});
     });
     super.initState();
